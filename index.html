@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -2463,19 +2463,19 @@
   <nav class="pillar-bar" id="pillar-bar" aria-label="Traya modules">
     <button class="pillar" data-panel="traya-assess" onclick="pillarNav('traya-assess')" type="button" aria-label="Assessment — Sleep, Condition, Algorithm, Ayush">
       <div class="pillar-icon-wrap">
-        <img class="pillar-icon" src="./Assessment.svg" alt="" aria-hidden="true" style="width:42px;height:42px;">
+        <img class="pillar-icon" src="Icons/Assessment.svg" alt="" aria-hidden="true" style="width:42px;height:42px;">
       </div>
       <span class="pillar-label">Assessment</span>
     </button>
     <button class="pillar" data-panel="traya-sleep" onclick="pillarNav('traya-sleep')" type="button" aria-label="Sleep — Real Time, Prahar, Sleep Input, Wearable, Report">
       <div class="pillar-icon-wrap">
-        <img class="pillar-icon" src="./Sleep.svg" alt="" aria-hidden="true">
+        <img class="pillar-icon" src="Icons/Sleep.svg" alt="" aria-hidden="true">
       </div>
       <span class="pillar-label">Sleep</span>
     </button>
     <button class="pillar" data-panel="traya-restoration" onclick="pillarNav('traya-restoration')" type="button" aria-label="Restoration — Phase 2">
       <div class="pillar-icon-wrap">
-        <img class="pillar-icon" src="./Restoration.svg" alt="" aria-hidden="true">
+        <img class="pillar-icon" src="Icons/Restoration.svg" alt="" aria-hidden="true">
       </div>
       <span class="pillar-label">Restoration</span>
     </button>
@@ -2498,24 +2498,20 @@
         <div id="home-panel-traya-assess" class="home-tab-panel" style="display:none;" aria-label="Assess panel">
           <button class="traya-back-btn" onclick="switchScreen('home')" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> Back</button>
           <div class="tracker-list" role="list">
-            <button class="tracker-row" onclick="pillarNav('realtime')" role="listitem" type="button" aria-label="Real Time Prahar Assessment">
-              <div class="tracker-row-left"><div><div class="tracker-name">Real Time Prahar Assessment</div><div class="tracker-sub">Circadian Rhythm of this Prahar</div></div></div>
+            <button class="tracker-row" onclick="pillarNav('realtime')" role="listitem" type="button" aria-label="Real Time Circadian Alignment">
+              <div class="tracker-row-left"><div><div class="tracker-name">Real Time Circadian Alignment</div><div class="tracker-sub">Circadian Rhythm of the Current Prahar</div></div></div>
               <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
             </button>
-            <button class="tracker-row" onclick="openForm('sleep')" role="listitem" type="button" aria-label="Start Sleep Assessment">
-              <div class="tracker-row-left"><div><div class="tracker-name">Start Sleep Assessment</div><div class="tracker-sub">Take the free sleep diagnostic</div></div></div>
+            <button class="tracker-row" onclick="openForm('sleep')" role="listitem" type="button" aria-label="Sleep Assessment">
+              <div class="tracker-row-left"><div><div class="tracker-name">Sleep Assessment</div><div class="tracker-sub">Free Sleep Diagnostic</div></div></div>
               <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
             </button>
-            <button class="tracker-row" onclick="openForm('personalize')" role="listitem" type="button" aria-label="Condition — Deep Diagnosis">
-              <div class="tracker-row-left"><div><div class="tracker-name">Condition</div><div class="tracker-sub">Deep Diagnosis · Profile &amp; Medical</div></div></div>
+            <button class="tracker-row" onclick="openFormPhysiology()" role="listitem" type="button" aria-label="Personalisation -- Physiology">
+              <div class="tracker-row-left"><div><div class="tracker-name">Personalisation -- Physiology</div><div class="tracker-sub">Deep Diagnosis (DD)</div></div></div>
               <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
             </button>
-            <button class="tracker-row" onclick="openFormAlgorithm()" role="listitem" type="button" aria-label="Algorithm — Root Cause Analysis">
-              <div class="tracker-row-left"><div><div class="tracker-name">Algorithm</div><div class="tracker-sub">Deep Diagnosis · Root Cause &amp; Events</div></div></div>
-              <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-            </button>
-            <button class="tracker-row" onclick="openForm('prakriti')" role="listitem" type="button" aria-label="AYUSH — Prakriti Assessment">
-              <div class="tracker-row-left"><div><div class="tracker-name">AYUSH</div><div class="tracker-sub">Prakriti Assessment</div></div></div>
+            <button class="tracker-row" onclick="openForm('prakriti')" role="listitem" type="button" aria-label="Personalisation -- Ayurved">
+              <div class="tracker-row-left"><div><div class="tracker-name">Personalisation -- Ayurved</div><div class="tracker-sub">Prakriti Assessment</div></div></div>
               <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
             </button>
           </div>
@@ -3530,58 +3526,48 @@
           <span id="sleep-progress-count">Select your sleep profile</span>
         </div>
 
-        <!-- ──── Assessment Card 2: Profile Picker (toggle → 4 sub-cards) ──── -->
+        <!-- ──── Sleep Assessment: 3-card picker ──── -->
         <div class="prahar-form-section" id="sleep-sec-picker">
-          <div class="prahar-form-section-header">Sleep Profile &middot; Self-diagnose your sleep</div>
+          <div class="prahar-form-section-header">Sleep Assessment &middot; Select your profile</div>
           <div style="font-family:var(--serif);font-size:var(--fs-body);font-style:italic;color:var(--text-2);margin:var(--s3) 0 var(--s5);line-height:1.6;">Select the profile that best describes your situation.</div>
 
-          <div class="sleep-profile-picker">
+          <div class="tracker-list" role="list">
 
-            <!-- 1 · Sleep Disorder condition — direct jump, no expand -->
-            <div class="spi" id="spi-disorder">
-              <button class="spi-header" type="button"
-                onclick="sleepStartPath('disorder')"
-                aria-label="Sleep Disorder condition — begin assessment">
-                Sleep Disorder condition
-                <span class="spi-chevron" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </span>
-                <span class="spi-done-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </span>
-              </button>
-            </div>
-
-            <!-- 2 · Normal Sleep Profile -->
-            <div class="spi" id="spi-normal">
-              <button class="spi-header" type="button"
-                onclick="sleepStartPath('normal')"
-                aria-label="Normal Sleep Profile — begin assessment">
-                Normal Sleep Profile
-                <span class="spi-chevron" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </span>
-                <span class="spi-done-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </span>
-              </button>
-            </div>
-
-            <!-- 3 · Dream Profile — Coming Soon -->
-            <div class="spi soon" id="spi-dream">
-              <div class="spi-header">
-                Dream Profile
-                <span class="spi-soon-badge">Coming Soon</span>
+            <!-- 1 · Clinical Sleep Disorder -->
+            <button class="tracker-row" id="spi-disorder" onclick="sleepStartPath('disorder')" role="listitem" type="button" aria-label="Clinical Sleep Disorder — begin assessment">
+              <div class="tracker-row-left"><div>
+                <div class="tracker-name">Clinical Sleep Disorder</div>
+                <div class="tracker-sub">Identify disorder, severity &amp; chronicity</div>
+              </div></div>
+              <div style="display:flex;align-items:center;gap:var(--s3);">
+                <span id="spi-disorder-badge" style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);"></span>
+                <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
               </div>
-            </div>
+            </button>
 
-            <!-- 4 · Nightmare Profile — Coming Soon -->
-            <div class="spi soon" id="spi-nightmare">
-              <div class="spi-header">
-                Nightmare Profile
-                <span class="spi-soon-badge">Coming Soon</span>
+            <!-- 2 · Normal Sleep Assessment -->
+            <button class="tracker-row" id="spi-normal" onclick="sleepStartPath('normal')" role="listitem" type="button" aria-label="Normal Sleep Assessment — begin assessment">
+              <div class="tracker-row-left"><div>
+                <div class="tracker-name">Normal Sleep Assessment</div>
+                <div class="tracker-sub">Full diagnostic questionnaire</div>
+              </div></div>
+              <div style="display:flex;align-items:center;gap:var(--s3);">
+                <span id="spi-normal-badge" style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);"></span>
+                <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
               </div>
-            </div>
+            </button>
+
+            <!-- 3 · Sleep with Conditions -->
+            <button class="tracker-row" id="spi-conditions" onclick="sleepStartPath('conditions')" role="listitem" type="button" aria-label="Sleep with Conditions — begin assessment">
+              <div class="tracker-row-left"><div>
+                <div class="tracker-name">Sleep with Conditions</div>
+                <div class="tracker-sub">Co-occurring medical or mental condition</div>
+              </div></div>
+              <div style="display:flex;align-items:center;gap:var(--s3);">
+                <span id="spi-conditions-badge" style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);"></span>
+                <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </div>
+            </button>
 
           </div>
         </div>
@@ -3653,6 +3639,68 @@
             </div>
             <div style="display:flex;justify-content:flex-end;margin-top:var(--s2);">
               <button class="pf-advance-btn" onclick="sleepFinishDisorder()" aria-label="Save disorder profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ──── Section 1c: Sleep with Conditions (lead-gen) ──── -->
+        <div class="prahar-form-section locked" id="sleep-sec-conditions">
+          <div class="prahar-form-section-header">Sleep with Conditions</div>
+
+          <!-- Field 1: Condition identification -->
+          <div class="form-field" id="sleep-cd1">
+            <div class="form-field-label">Identify your co-occurring condition <span class="req">*</span></div>
+            <div style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);margin-bottom:var(--s3);">Medical</div>
+            <div class="form-pill-row" id="sleep-cd-identify" role="radiogroup" aria-label="Co-occurring condition">
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'thyroid')">Thyroid</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'diabetes')">Diabetes</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'pcos')">PCOS</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'heart')">Heart Disease</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'hypertension')">Hypertension</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'arthritis')">Arthritis</button>
+            </div>
+            <div style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);margin:var(--s4) 0 var(--s3);">Mental</div>
+            <div class="form-pill-row" role="radiogroup" aria-label="Mental health condition">
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'anxiety')">Anxiety</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'depression')">Depression</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'ptsd')">PTSD</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'bipolar')">Bipolar Disorder</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'ocd')">OCD</button>
+              <button class="form-pill" role="radio" aria-checked="false" onclick="sleepCd1Select(this,'other')">Other</button>
+            </div>
+            <div id="sleep-cd1-other-wrap" style="display:none;margin-top:var(--s3);">
+              <input type="text" id="sleep-cd1-other-input"
+                placeholder="Type your condition name and press Enter"
+                onkeydown="sleepCd1OtherKey(event)"
+                aria-label="Specify your condition"
+                style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--r-sm);font-family:var(--sans);font-size:var(--fs-body);background:var(--card);color:var(--text-1);" />
+            </div>
+          </div>
+
+          <!-- Field 2: Chronic duration -->
+          <div class="form-field locked" id="sleep-cd2">
+            <div class="form-field-label">How chronic is this condition? <span class="req">*</span></div>
+            <div class="form-option-list no-other" id="sleep-cd-chronic">
+              <button class="form-radio-card" role="radio" aria-checked="false" onclick="sleepDpAdvance(this,'sleep-cd-severity')">Less than 1 yr</button>
+              <button class="form-radio-card" role="radio" aria-checked="false" onclick="sleepDpAdvance(this,'sleep-cd-severity')">Less than 3 yrs</button>
+              <button class="form-radio-card" role="radio" aria-checked="false" onclick="sleepDpAdvance(this,'sleep-cd-severity')">More than 3 yrs</button>
+            </div>
+          </div>
+
+          <!-- Field 3: Severity -->
+          <div class="form-field locked" id="sleep-cd-severity">
+            <div class="form-field-label">Severity of sleep impact <span class="req">*</span></div>
+            <div class="form-option-list no-other" id="sleep-cd-sev-list" role="radiogroup" aria-label="Severity">
+              <button class="form-radio-card" role="radio" aria-checked="false" onclick="sleepDpAdvance(this,'sleep-cd-done')">Moderate (0–4)</button>
+              <button class="form-radio-card" role="radio" aria-checked="false" onclick="sleepDpAdvance(this,'sleep-cd-done')">Intense (4–7)</button>
+              <button class="form-radio-card" role="radio" aria-checked="false" onclick="sleepDpAdvance(this,'sleep-cd-done')">Acute (7–10)</button>
+            </div>
+          </div>
+
+          <!-- Done row -->
+          <div class="form-field locked" id="sleep-cd-done">
+            <div style="display:flex;justify-content:flex-end;margin-top:var(--s2);">
+              <button class="pf-advance-btn" onclick="sleepSaveConditions()" aria-label="Save conditions profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
             </div>
           </div>
         </div>
@@ -3886,9 +3934,36 @@
     </div>
 
     <!-- ════ FORM: Deep Diagnosis (single-page sequential-unlock cards) ════ -->
-    <div class="form-page" id="form-personalize">
+    <!-- ── Physiology: intermediate list (Condition + Algorithm) ── -->
+    <div class="form-page" id="form-physiology">
       <div class="screen-content">
         <button class="form-back" onclick="closeForm()" type="button" aria-label="Back to Trackers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg> Trackers</button>
+        <div class="form-breadcrumb">Personalisation <span>Physiology</span></div>
+
+        <div id="phy-list">
+          <div class="tracker-list" role="list" style="margin-top:var(--s4);">
+            <button class="tracker-row" id="phy-row-condition" onclick="openForm('personalize')" role="listitem" type="button" aria-label="Condition — Profile &amp; Medical">
+              <div class="tracker-row-left"><div><div class="tracker-name">Condition</div><div class="tracker-sub">Profile &amp; Medical</div></div></div>
+              <div style="display:flex;align-items:center;gap:var(--s3);">
+                <span id="phy-badge-condition" style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);"></span>
+                <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </div>
+            </button>
+            <button class="tracker-row" id="phy-row-algorithm" onclick="openFormAlgorithm()" role="listitem" type="button" aria-label="Algorithm — Root Cause &amp; Events">
+              <div class="tracker-row-left"><div><div class="tracker-name">Algorithm</div><div class="tracker-sub">Root Cause &amp; Events</div></div></div>
+              <div style="display:flex;align-items:center;gap:var(--s3);">
+                <span id="phy-badge-algorithm" style="font-family:var(--sans);font-size:var(--fs-xs);color:var(--text-3);"></span>
+                <div class="tracker-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-page" id="form-personalize">
+      <div class="screen-content">
+        <button class="form-back" onclick="openFormPhysiology()" type="button" aria-label="Back to Physiology"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg> Physiology</button>
         <div class="form-breadcrumb">Condition <span>Deep Diagnosis</span></div>
 
         <!-- ── LIST VIEW ── -->
@@ -4046,7 +4121,7 @@
     <!-- ════ FORM: Algorithm (Root Cause + Life Events) ════ -->
     <div class="form-page" id="form-algorithm">
       <div class="screen-content">
-        <button class="form-back" onclick="closeForm()" type="button" aria-label="Back to Trackers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg> Trackers</button>
+        <button class="form-back" onclick="openFormPhysiology()" type="button" aria-label="Back to Physiology"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg> Physiology</button>
         <div class="form-breadcrumb">Algorithm <span>Deep Diagnosis</span></div>
 
         <!-- ── LIST VIEW ── -->
@@ -4598,15 +4673,15 @@
             <div class="insight-card-title" style="margin-bottom:var(--s4);">Your Trackers</div>
             <div class="category-icons-row">
               <div class="category-icon-card" role="button" tabindex="0" onclick="switchScreen('home');pillarNav('traya-assess');">
-                <img src="https://raw.githubusercontent.com/Intern-Saanjh/Sleep_app/refs/heads/main/Assessment.svg" alt="Assessment">
+                <img src="Icons/Assessment.svg" alt="Assessment">
                 <span class="category-icon-label">Assessment</span>
               </div>
               <div class="category-icon-card" role="button" tabindex="0" onclick="switchScreen('home');pillarNav('traya-sleep');">
-                <img src="https://raw.githubusercontent.com/Intern-Saanjh/Sleep_app/refs/heads/main/Sleep.svg" alt="Sleep">
+                <img src="Icons/Sleep.svg" alt="Sleep">
                 <span class="category-icon-label">Sleep</span>
               </div>
               <div class="category-icon-card" role="button" tabindex="0" onclick="switchScreen('home');pillarNav('traya-restoration');">
-                <img src="https://raw.githubusercontent.com/Intern-Saanjh/Sleep_app/refs/heads/main/Restoration.svg" alt="Restoration">
+                <img src="Icons/Restoration.svg" alt="Restoration">
                 <span class="category-icon-label">Restoration</span>
               </div>
             </div>
@@ -5288,6 +5363,58 @@
     _formDirty = true;
   }
 
+  /* Open Physiology intermediate list (Condition + Algorithm) */
+  function openFormPhysiology() {
+    openForm('physiology');
+    _formDirty = true;
+  }
+
+  /* Called when Condition form (all 4 cards) is fully saved.
+     Returns to Physiology list, marks Condition done, highlights Algorithm as next. */
+  function phyMarkConditionDone() {
+    _formDirty = false;
+
+    // Return to Physiology list
+    openFormPhysiology();
+
+    // Mark Condition row as done
+    var condBadge = document.getElementById('phy-badge-condition');
+    if (condBadge) {
+      condBadge.textContent = 'Done';
+      condBadge.style.color = 'var(--navy)';
+      condBadge.style.fontWeight = '600';
+    }
+    var condRow = document.getElementById('phy-row-condition');
+    if (condRow) condRow.style.opacity = '0.65';
+
+    // Highlight Algorithm as the next step
+    var algRow = document.getElementById('phy-row-algorithm');
+    if (algRow) {
+      algRow.classList.add('highlight');
+    }
+    var algBadge = document.getElementById('phy-badge-algorithm');
+    if (algBadge) {
+      algBadge.textContent = 'Up next';
+      algBadge.style.color = 'var(--gold)';
+      algBadge.style.fontWeight = '600';
+    }
+
+    // Toast feedback
+    var toast = document.getElementById('save-toast');
+    var toastText = document.getElementById('save-toast-text');
+    if (toastText) toastText.textContent = 'Condition saved';
+    if (toast) {
+      toast.classList.add('visible');
+      setTimeout(function() { toast.classList.remove('visible'); }, 2800);
+    }
+
+    // Scroll Algorithm row into view
+    setTimeout(function() {
+      var algRowEl = document.getElementById('phy-row-algorithm');
+      if (algRowEl) algRowEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 150);
+  }
+
   /* ── Condition form: list → card navigation ── */
   function pzOpenCard(key) {
     document.getElementById('pz-list').style.display = 'none';
@@ -5316,7 +5443,7 @@
     updateProfileCompletion();
     var seq = {profile:'medical', medical:'supervision', supervision:'consent'};
     if (seq[key]) { pzOpenCard(seq[key]); }
-    else { closeFormWithSave('Deep Diagnosis'); }
+    else { phyMarkConditionDone(); }
   }
 
   /* ── Algorithm form: list → card navigation ── */
@@ -6717,7 +6844,7 @@
   }
 
   function sleepResetForm() {
-    var allSections = ['sleep-sec-profile','sleep-sec-disorder',
+    var allSections = ['sleep-sec-profile','sleep-sec-disorder','sleep-sec-conditions',
       'sleep-sec-q2','sleep-sec-q3','sleep-sec-q4','sleep-sec-q5',
       'sleep-sec-q6','sleep-sec-q7','sleep-sec-q8','sleep-sec-q9',
       'sleep-sec-r1','sleep-sec-chronic','sleep-sec-severity',
@@ -6725,23 +6852,34 @@
     var picker = document.getElementById('sleep-sec-picker');
     if (picker) {
       picker.style.display = '';
-      // Remove section-level done class (may have been set by unlockSection auto-detect)
       picker.classList.remove('done');
-      // Remove done state from all picker cards
-      picker.querySelectorAll('.spi.done').forEach(function(card) {
-        card.classList.remove('done');
-        var btn = card.querySelector('.spi-header');
-        if (btn) btn.removeAttribute('aria-pressed');
+      // Reset the 3 tracker-row picker cards
+      ['spi-disorder','spi-normal','spi-conditions'].forEach(function(cardId) {
+        var card = document.getElementById(cardId);
+        if (card) card.removeAttribute('aria-pressed');
+        var badge = document.getElementById(cardId + '-badge');
+        if (badge) badge.textContent = '';
       });
     }
     allSections.forEach(function(id) {
       var el = document.getElementById(id);
       if (el) { el.classList.add('locked'); el.style.display = ''; }
     });
+    // Lock disorder sub-fields
     ['sleep-dp2','sleep-dp-severity','sleep-dp3'].forEach(function(id) {
       var el = document.getElementById(id);
       if (el) el.classList.add('locked');
     });
+    // Lock conditions sub-fields
+    ['sleep-cd2','sleep-cd-severity','sleep-cd-done'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.add('locked');
+    });
+    // Reset other-input for conditions
+    var cdWrap = document.getElementById('sleep-cd1-other-wrap');
+    if (cdWrap) cdWrap.style.display = 'none';
+    var cdInput = document.getElementById('sleep-cd1-other-input');
+    if (cdInput) cdInput.value = '';
     var q9p2 = document.getElementById('sleep-q9-part2');
     if (q9p2) q9p2.classList.remove('visible');
     var form = document.getElementById('form-sleep');
@@ -6766,28 +6904,26 @@
     _currentFormId = 'sleep';
 
     // If the user switches profiles mid-flow, re-lock the previously in-progress path
-    var prevPressedBtn = document.querySelector('#sleep-sec-picker .spi-header[aria-pressed="true"]');
-    if (prevPressedBtn) {
-      var prevCard = prevPressedBtn.closest('.spi');
-      if (prevCard && prevCard.id !== 'spi-' + path) {
-        var prevId = prevCard.id.replace('spi-', '');
-        if (prevId === 'disorder') {
-          var dSec = document.getElementById('sleep-sec-disorder');
-          if (dSec) dSec.classList.add('locked');
-        } else if (prevId === 'normal') {
-          var pSec = document.getElementById('sleep-sec-profile');
-          if (pSec) pSec.classList.add('locked');
-        }
-        prevPressedBtn.removeAttribute('aria-pressed');
+    var prevPressedBtn = document.querySelector('#sleep-sec-picker .tracker-row[aria-pressed="true"]');
+    if (prevPressedBtn && prevPressedBtn.id !== 'spi-' + path) {
+      var prevId = prevPressedBtn.id.replace('spi-', '');
+      if (prevId === 'disorder') {
+        var dSec = document.getElementById('sleep-sec-disorder');
+        if (dSec) { dSec.classList.add('locked'); dSec.style.display = 'none'; }
+      } else if (prevId === 'normal') {
+        var pSec = document.getElementById('sleep-sec-profile');
+        if (pSec) pSec.classList.add('locked');
+      } else if (prevId === 'conditions') {
+        var cSec = document.getElementById('sleep-sec-conditions');
+        if (cSec) { cSec.classList.add('locked'); cSec.style.display = 'none'; }
       }
+      prevPressedBtn.removeAttribute('aria-pressed');
     }
 
+    // Mark chosen card as active
     var chosen = document.getElementById('spi-' + path);
     if (chosen) {
-      chosen.classList.remove('active');
-      chosen.classList.remove('suggested');
-      var chosenBtn = chosen.querySelector('.spi-header');
-      if (chosenBtn) chosenBtn.setAttribute('aria-pressed', 'true');
+      chosen.setAttribute('aria-pressed', 'true');
     }
 
     // Unlock the target section directly — do NOT use unlockSection() here because
@@ -6809,9 +6945,23 @@
       _sleepQ1Value = 'disorder';
       var profile = document.getElementById('sleep-sec-profile');
       if (profile) profile.style.display = 'none';
+      var conds = document.getElementById('sleep-sec-conditions');
+      if (conds) conds.style.display = 'none';
       revealSection('sleep-sec-disorder');
       sleepUpdateProgress('Sleep Disorder — Step 1 of 3');
+    } else if (path === 'conditions') {
+      _sleepQ1Value = 'conditions';
+      var profile2 = document.getElementById('sleep-sec-profile');
+      if (profile2) profile2.style.display = 'none';
+      var disorder2 = document.getElementById('sleep-sec-disorder');
+      if (disorder2) disorder2.style.display = 'none';
+      revealSection('sleep-sec-conditions');
+      sleepUpdateProgress('Sleep with Conditions — Step 1 of 3');
     } else {
+      var disorder3 = document.getElementById('sleep-sec-disorder');
+      if (disorder3) disorder3.style.display = 'none';
+      var conds3 = document.getElementById('sleep-sec-conditions');
+      if (conds3) conds3.style.display = 'none';
       revealSection('sleep-sec-profile');
       sleepUpdateProgress('Question 1 of 9');
     }
@@ -6907,6 +7057,57 @@
     if (!input || !input.value.trim()) return;
     sleepDpAdvance(null, 'sleep-dp2', 'sleep-dp1');
   }
+
+  /* ── Sleep with Conditions: pill select ── */
+  function sleepCd1Select(pill, value) {
+    // Deselect all pills across both condition groups inside sleep-cd1
+    var cd1 = document.getElementById('sleep-cd1');
+    if (cd1) cd1.querySelectorAll('.form-pill').forEach(function(p) {
+      p.classList.remove('selected');
+      p.setAttribute('aria-checked','false');
+    });
+    pill.classList.add('selected');
+    pill.setAttribute('aria-checked','true');
+    var wrap = document.getElementById('sleep-cd1-other-wrap');
+    var input = document.getElementById('sleep-cd1-other-input');
+    if (value === 'other') {
+      if (wrap) wrap.style.display = 'block';
+      setTimeout(function() { if (input) input.focus(); }, 50);
+    } else {
+      if (wrap) wrap.style.display = 'none';
+      if (input) input.value = '';
+      sleepDpAdvance(null, 'sleep-cd2', 'sleep-cd1');
+    }
+  }
+  function sleepCd1OtherKey(e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    var input = document.getElementById('sleep-cd1-other-input');
+    if (!input || !input.value.trim()) return;
+    sleepDpAdvance(null, 'sleep-cd2', 'sleep-cd1');
+  }
+
+  /* ── Sleep with Conditions: save / done ── */
+  function sleepSaveConditions() {
+    // Mark the picker card as done
+    var card = document.getElementById('spi-conditions');
+    if (card) {
+      card.setAttribute('aria-pressed', 'false');
+      var badge = document.getElementById('spi-conditions-badge');
+      if (badge) badge.textContent = 'Saved';
+    }
+    // Collapse the conditions section
+    var cSec = document.getElementById('sleep-sec-conditions');
+    if (cSec) { cSec.classList.add('locked'); cSec.style.display = 'none'; }
+    // Reset locked state of internal fields
+    ['sleep-cd2','sleep-cd-severity','sleep-cd-done'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.add('locked');
+    });
+    sleepUpdateProgress('Conditions profile saved · choose another profile or close');
+    var picker = document.getElementById('sleep-sec-picker');
+    if (picker) setTimeout(function() { picker.scrollIntoView({ behavior:'smooth', block:'start' }); }, 100);
+  }
   function sleepDpAdvance(card, targetId, fromId) {
     var prev = card ? card.closest('.form-field') : (fromId ? document.getElementById(fromId) : null);
     if (card) sleepExclusiveCard(card);
@@ -6968,10 +7169,9 @@
   function sleepFinishDisorder() {
     var card = document.getElementById('spi-disorder');
     if (card) {
-      card.classList.add('done');
-      card.classList.remove('suggested');
-      var btn = card.querySelector('.spi-header');
-      if (btn) btn.removeAttribute('aria-pressed');
+      card.setAttribute('aria-pressed', 'false');
+      var badge = document.getElementById('spi-disorder-badge');
+      if (badge) badge.textContent = 'Saved';
     }
     var dSec = document.getElementById('sleep-sec-disorder');
     if (dSec) {
@@ -6982,10 +7182,6 @@
       var el = document.getElementById(id);
       if (el) el.classList.add('locked');
     });
-    var next = document.getElementById('spi-normal');
-    if (next && !next.classList.contains('done')) {
-      next.classList.add('suggested');
-    }
     sleepUpdateProgress('Disorder profile saved · choose another profile or close');
     var picker = document.getElementById('sleep-sec-picker');
     if (picker) {
